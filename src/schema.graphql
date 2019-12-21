@@ -1,7 +1,7 @@
 type Query {
   info: String!
   feed: [Factura!]!
-  factura(indexId: Int!): Factura!
+  getFacturaByIndex(indexId: Int!): Factura!
 }
 
 type Mutation {

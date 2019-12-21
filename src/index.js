@@ -15,7 +15,7 @@ const resolvers = {
   Query: {
    info: () => 'Esta es la API de un Hackernews Clone',
    feed: () => facturas,
-   factura: function(_, args) {
+   getFacturaByIndex: function(_, args) {
       return facturas[args.indexId];                     
     }, 
   },
