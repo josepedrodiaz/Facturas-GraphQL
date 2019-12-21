@@ -16,7 +16,22 @@ const resolvers = {
    info: () => 'Esta es la API de un Hackernews Clone',
    feed: () => facturas,
    getFacturaByIndex: function(_, args) {
-      return facturas[args.indexId];                     
+     if(facturas.length <= args.indexId){
+      return facturas[args.indexId]
+     }else{
+      return false;
+     }                    
+    }, 
+    getFacturaByMonth: function(_, args) {
+      var result;
+      for( var i = 0, len = facturas.length; i < len; i++ ) {
+          if( facturas[i][2] === args.month ) {
+              result = facturas[i];
+              break;
+          }
+          result = false;
+      }
+      return result;                     
     }, 
   },
   
