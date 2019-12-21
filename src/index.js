@@ -18,20 +18,11 @@ const resolvers = {
    getFacturaByIndex: function(_, args) {
     //if(facturas.length <= args.indexId){
      if( true ){
-      console.log("args >> " + args.indexId ) 
-      console.log("lenght >> " + facturas.length)
-      let totalFacturas = facturas.length
       let index = args.indexId
-      console.log( totalFacturas <= (index+1) )
-      if ( totalFacturas <= (index+1) ){
+      if ( idCount <= (index+1) ){
         return facturas[index]
-      }else{
-        return false
       }
-     }
-     //else{
-     // return false;
-     //}                    
+     }                    
     }, 
     getFacturaByMonth: function(_, args) {
       var result;
