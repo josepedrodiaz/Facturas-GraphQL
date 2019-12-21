@@ -19,7 +19,7 @@ const resolvers = {
     //if(facturas.length <= args.indexId){
      if( true ){
       console.log("args >> ") 
-      console.log(args)
+      console.log(args.indexId)
       return facturas[args.indexId]
      }
      //else{
