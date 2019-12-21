@@ -13,12 +13,14 @@ let idCount = facturas.length
 const resolvers = {
   
   Query: {
-   info: () => 'Esta es la API de un Hackernews Clone',
+   info: () => 'Esta es mi API de Facturas',
    feed: () => facturas,
    getFacturaByIndex: function(_, args) {
-    // if(facturas.length <= args.indexId){
+    //if(facturas.length <= args.indexId){
+     if( true ){
       return facturas[args.indexId]
-     //}else{
+     }
+     //else{
      // return false;
      //}                    
     }, 
