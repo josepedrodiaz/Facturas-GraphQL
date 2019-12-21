@@ -15,7 +15,7 @@ const resolvers = {
   Query: {
    info: () => 'Esta es la API de un Hackernews Clone',
    feed: () => facturas,
-   factura: ({indexId}) => {
+   factura: (indexId) => {
        var index = indexId
       // if (index == -1) {
       //   return false
