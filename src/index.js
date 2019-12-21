@@ -22,8 +22,12 @@ const resolvers = {
       console.log("lenght >> " + facturas.length)
       let totalFacturas = facturas.length
       let index = args.indexId
-      console.log( totalFacturas < (index+1) )
-      return facturas[index]
+      console.log( totalFacturas <= (index+1) )
+      if ( totalFacturas <= (index+1) ){
+        return facturas[index]
+      }else{
+        return false
+      }
      }
      //else{
      // return false;
