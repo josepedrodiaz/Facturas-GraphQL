@@ -17,7 +17,7 @@ const resolvers = {
    feed: () => facturas,
    getFacturaByIndex: function(_, args) {
     //if(facturas.length <= args.indexId){
-     if( true ){
+     if( facturas.length ){
       return facturas[args.indexId]
      }
      //else{
