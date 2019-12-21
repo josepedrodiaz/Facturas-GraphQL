@@ -18,8 +18,8 @@ const resolvers = {
    getFacturaByIndex: function(_, args) {
     //if(facturas.length <= args.indexId){
      if( true ){
-      console.log("args >> ") 
-      console.log(args.indexId)
+      console.log("args >> " + args.indexId ) 
+      console.log("lenght >> " + facturas.length)
       return facturas[args.indexId]
      }
      //else{
