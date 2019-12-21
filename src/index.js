@@ -15,14 +15,11 @@ const resolvers = {
   Query: {
    info: () => 'Esta es la API de un Hackernews Clone',
    feed: () => facturas,
-   factura: (args) => {
-       var index = args.indexId
-      // if (index == -1) {
-      //   return false
-      // }else{
-        return facturas[index]
-      //}
-    }
+   factura: function(_, args) {
+      console.log("out1" + args);
+      console.log("out3" + args.indexId);            
+      return "hardcoded return from getShowByName";           
+  }, 
   },
   
   Mutation: {
