@@ -1,0 +1,15 @@
+type Query {
+  info: String!
+  feed: [Factura!]!
+  factura(id: ID!): Factura
+}
+
+type Mutation {
+    post(periodo: String!, monto: Float!): Factura!
+  }
+
+type Factura {
+  id: ID!
+  periodo: String!
+  monto: Float!
+}

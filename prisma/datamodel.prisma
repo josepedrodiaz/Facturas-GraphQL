@@ -1,0 +1,7 @@
+type Factura {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  periodo: String!
+  monto: Float!
+}
