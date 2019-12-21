@@ -16,11 +16,11 @@ const resolvers = {
    info: () => 'Esta es la API de un Hackernews Clone',
    feed: () => facturas,
    factura: ({indexId}) => {
-      // var index = facturas.indexOf(id)
+       var index = indexId
       // if (index == -1) {
       //   return false
       // }else{
-        return facturas[indexId]
+        return facturas[index]
       //}
     }
   },
