@@ -20,7 +20,7 @@ const resolvers = {
       // if (index == -1) {
       //   return false
       // }else{
-        return facturas[args.indexId]
+        return facturas[0]
       //}
     }
   },
