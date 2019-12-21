@@ -16,22 +16,15 @@ const resolvers = {
    info: () => 'Esta es mi API de Facturas',
    feed: () => facturas,
    getFacturaByIndex: function(_, args) {
-    //if(facturas.length <= args.indexId){
-     if( true ){
-      let index = args.indexId
-      if ( idCount <= (index+1) ){
-        return facturas[index]
-      }
-     }                    
+      return facturas[args.indexId]              
     }, 
     getFacturaByMonth: function(_, args) {
-      var result;
-      for( var i = 0, len = facturas.length; i < len; i++ ) {
+      let result;
+      for( let i = 0, len = facturas.length; i < len; i++ ) {
           if( facturas[i][2] === args.month ) {
               result = facturas[i];
               break;
           }
-          result = false;
       }
       return result;                     
     }, 
