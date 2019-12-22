@@ -43,16 +43,17 @@ const resolvers = {
     },
 
     put: (parent, args) => {
-
+      let facturaActualizadaIndex
       for (let i = 0, len = facturas.length; i < len; i++) {
         console.log(facturas[i]["id"])
         console.log(args.id)
         if (facturas[i]["id"] === args.id) {
           facturas[i].periodo = args.periodo
           facturas[i].monto = args.monto
+          facturaActualizadaIndex = i
           break
         }
-        return facturas[i]
+        return facturas[facturaActualizadaIndex]
       }
 
     },
