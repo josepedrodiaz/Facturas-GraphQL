@@ -11,32 +11,29 @@ let idCount = facturas.length
 
 // 2
 const resolvers = {
-  
+
   Query: {
-   info: () => 'Esta es mi API de Facturas',
-   feed: () => facturas,
-   getFacturaByIndex: function(_, args) {
-      return facturas[args.indexId]              
-    }, 
-    getFacturaByPeriodo: function(_, args) {
+    info: () => 'Esta es mi API de Facturas',
+    feed: () => facturas,
+    getFacturaByIndex: function (_, args) {
+      return facturas[args.indexId]
+    },
+    getFacturaByPeriodo: function (_, args) {
       let result;
-      for( let i = 0, len = facturas.length; i < len; i++ ) {
-        console.log("VUELTA " + i);
-        console.log(facturas[i]["periodo"]);
-        console.log(args.periodo);
-          if( facturas[i]["periodo"] === args.periodo ) {
-              result = facturas[i];
-              break;
-          }
+      for (let i = 0, len = facturas.length; i < len; i++) {
+        if (facturas[i]["periodo"] === args.periodo) {
+          result = facturas[i];
+          break;
+        }
       }
-      return result;                     
-    }, 
+      return result;
+    },
   },
-  
+
   Mutation: {
     // 2
     post: (parent, args) => {
-       const factura = {
+      const factura = {
         id: `factura-${idCount++}`,
         periodo: args.periodo,
         monto: args.monto,
@@ -48,7 +45,7 @@ const resolvers = {
     // put: (parent, args) => {
 
     //  var index = facturas.indexOf(args.id);
-     
+
     //  if (index !== -1) {
     //    facturas[index].periodo = args.periodo
     //    facturas[index].monto = args.monto
@@ -56,21 +53,21 @@ const resolvers = {
     //  }else{
     //    return false;
     //  }
-    
+
     // },
 
-  //   delete: (parent, args) => {
+    //   delete: (parent, args) => {
 
-  //     var index = facturas.indexOf(args.id);
-  //     if (index !== -1) {
-  //       array.splice(index, 1);
-  //       return facturas
-  //     }else{
-  //       return false;
-  //     }
+    //     var index = facturas.indexOf(args.id);
+    //     if (index !== -1) {
+    //       array.splice(index, 1);
+    //       return facturas
+    //     }else{
+    //       return false;
+    //     }
 
-     
-  //  }
+
+    //  }
   }
 
 }
