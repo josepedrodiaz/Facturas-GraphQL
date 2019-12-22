@@ -15,14 +15,11 @@ const resolvers = {
   Query: {
     info: () => 'Esta es mi API de Facturas',
     feed: () => facturas,
-    // getFacturaByIndex: function (_, args) {
-    //   return facturas[args.indexId]
-    // },
-    getFacturaByIndex: (_, { indexId }) => facturas[indexId],
-    getFacturaByPeriodo: function (_, args) {
+    getFacturaByIndex: (_, { Int: key}) => facturas[key],
+    getFacturaByPeriodo: function (_, { periodo }) {
       let result;
       for (let i = 0, len = facturas.length; i < len; i++) {
-        if (facturas[i]["periodo"] === args.periodo) {
+        if (facturas[i]["periodo"] === periodo) {
           result = facturas[i];
           break;
         }
