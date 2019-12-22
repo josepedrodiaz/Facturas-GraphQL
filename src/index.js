@@ -15,9 +15,10 @@ const resolvers = {
   Query: {
     info: () => 'Esta es mi API de Facturas',
     feed: () => facturas,
-    getFacturaByIndex: function (_, args) {
-      return facturas[args.indexId]
-    },
+    // getFacturaByIndex: function (_, args) {
+    //   return facturas[args.indexId]
+    // },
+    getFacturaByIndex: (_, { indexId }) => facturas[indexId],
     getFacturaByPeriodo: function (_, args) {
       let result;
       for (let i = 0, len = facturas.length; i < len; i++) {
@@ -31,7 +32,6 @@ const resolvers = {
   },
 
   Mutation: {
-    // 2
     post: (parent, args) => {
       const factura = {
         id: `factura-${idCount++}`,
