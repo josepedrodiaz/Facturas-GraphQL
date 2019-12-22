@@ -60,7 +60,7 @@ const resolvers = {
         let elementosBorrados = false
         for (let i = 0, len = facturas.length; i < len; i++) {
           if (facturas[i]["periodo"] === args.periodo) {
-            array.splice(i, 1);
+            facturas.splice(i, 1);
             elementosBorrados = true
           }
         }
