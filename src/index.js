@@ -53,14 +53,6 @@ const resolvers = {
         return facturas[i]
       }
 
-     if (index !== -1) {
-       facturas[index].periodo = args.periodo
-       facturas[index].monto = args.monto
-       return facturas[index]
-     }else{
-       return false;
-     }
-
     },
 
       delete: (parent, args) => {
