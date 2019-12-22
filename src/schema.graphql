@@ -12,6 +12,11 @@ type Mutation {
     login(email: String!, password: String!): AuthPayload
   }
 
+
+type Subscription {
+  nuevaFactura: Factura
+}
+
 type Factura {
   id: ID!
   periodo: String!
@@ -31,3 +36,4 @@ type User {
   password: String!
   facturas: [Factura!]!
 }
+
