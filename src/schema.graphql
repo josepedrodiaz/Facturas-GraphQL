@@ -8,7 +8,7 @@ type Query {
 type Mutation {
     post(periodo: String!, monto: Float!): Factura!
     delete(periodo: String!): String!
-    put(id: Int!, periodo: String!, monto: Float!): Factura
+    put(id: String!, periodo: String!, monto: Float!): Factura
   }
 
 type Factura {
