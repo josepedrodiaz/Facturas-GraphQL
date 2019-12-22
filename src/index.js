@@ -53,8 +53,11 @@ const resolvers = {
           facturaActualizadaIndex = i
           break
         }
-        return facturas[facturaActualizadaIndex]
       }
+
+
+      console.log(facturaActualizadaIndex)
+      return facturas[facturaActualizadaIndex]
 
     },
 
