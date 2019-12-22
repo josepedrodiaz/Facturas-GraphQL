@@ -10,7 +10,7 @@ const resolvers = {
       return context.prisma.facturas()
     },
     getFacturaByPeriodo: (root, args, context, info) => {
-      return await prisma.facturas({ periodo: args.periodo })
+      return context.prisma.facturas({ periodo: args.periodo })
     },
 
     Mutation: {
