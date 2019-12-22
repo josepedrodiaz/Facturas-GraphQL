@@ -10,7 +10,7 @@ const resolvers = {
       return context.prisma.facturas()
     },
     getFacturaByPeriodo: (root, args, context, info) => {
-      return context.prisma.facturas({ periodo: args.periodo })
+      return context.prisma.getFactura({ periodo: args.periodo })
     }
   },
 
