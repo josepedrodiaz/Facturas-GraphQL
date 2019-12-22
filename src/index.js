@@ -1,20 +1,14 @@
 const { GraphQLServer } = require('graphql-yoga')
-
-
-let facturas = [{
-  id: 'factura-0',
-  periodo: '01/2020',
-  monto: 1920.32
-}]
-
-let idCount = facturas.length
+const { prisma } = require('./generated/prisma-client')
 
 // 2
 const resolvers = {
 
   Query: {
     info: () => 'Esta es mi API de Facturas',
-    feed: () => facturas,
+    feed: ( root, args, context, info ) => {
+      return context.prisma.facturas()
+    },
     getFacturaByIndex: (_, { key }) => facturas[key],
     getFacturaByPeriodo: function (_, { periodo }) {
       let result;
@@ -29,14 +23,11 @@ const resolvers = {
   },
 
   Mutation: {
-    post: (parent, args) => {
-      const factura = {
-        id: `factura-${idCount++}`,
+    post: (root, args, context)=> {
+      return context.prisma.createFactura({
         periodo: args.periodo,
         monto: args.monto,
-      }
-      facturas.push(factura)
-      return factura
+      })
     },
 
     put: (parent, args) => {
@@ -74,6 +65,7 @@ const resolvers = {
 const server = new GraphQLServer({
   typeDefs: './src/schema.graphql',
   resolvers,
+  context: { prisma },
 })
 
 server.start(() => console.log(`Server is running on http://localhost:4000`))
