@@ -18,13 +18,13 @@ const resolvers = {
    getFacturaByIndex: function(_, args) {
       return facturas[args.indexId]              
     }, 
-    getFacturaByMonth: function(_, args) {
+    getFacturaByPeriodo: function(_, args) {
       let result;
       for( let i = 0, len = facturas.length; i < len; i++ ) {
         console.log("VUELTA " + i);
-        console.log(facturas[i][1]);
-        console.log(args.month);
-          if( facturas[i][1] === args.month ) {
+        console.log(facturas[i]);
+        console.log(args.periodo);
+          if( facturas[i][1] === args.periodo ) {
               result = facturas[i];
               break;
           }
