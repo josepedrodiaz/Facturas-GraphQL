@@ -56,19 +56,20 @@ const resolvers = {
 
     // },
 
-    //   delete: (parent, args) => {
-
-    //     var index = facturas.indexOf(args.id);
-    //     if (index !== -1) {
-    //       array.splice(index, 1);
-    //       return facturas
-    //     }else{
-    //       return false;
-    //     }
-
-
-    //  }
-  }
+      delete: (parent, args) => {
+        let elementosBorrados = false
+        for (let i = 0, len = facturas.length; i < len; i++) {
+          if (facturas[i]["periodo"] === args.periodo) {
+            array.splice(i, 1);
+            elementosBorrados = true
+          }
+        }
+        if (elementosBorrados) {
+          return "Se han borrado todas las facturas correspondientes al período " + args.periodo
+        }else{
+          return "No se encuentras facturas a borrr para el período " + args.periodo
+        }
+      }
 
 }
 
