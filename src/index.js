@@ -42,19 +42,26 @@ const resolvers = {
       return factura
     },
 
-    // put: (parent, args) => {
+    put: (parent, args) => {
 
-    //  var index = facturas.indexOf(args.id);
+      for (let i = 0, len = facturas.length; i < len; i++) {
+        if (facturas[i]["id"] === args.id) {
+          facturas[i].periodo = args.periodo
+          facturas[i].monto = args.monto
+          break
+        }
+        return facturas[i]
+      }
 
-    //  if (index !== -1) {
-    //    facturas[index].periodo = args.periodo
-    //    facturas[index].monto = args.monto
-    //    return facturas[index]
-    //  }else{
-    //    return false;
-    //  }
+     if (index !== -1) {
+       facturas[index].periodo = args.periodo
+       facturas[index].monto = args.monto
+       return facturas[index]
+     }else{
+       return false;
+     }
 
-    // },
+    },
 
       delete: (parent, args) => {
         let elementosBorrados = false
@@ -67,7 +74,7 @@ const resolvers = {
         if (elementosBorrados) {
           return "Se han borrado todas las facturas correspondientes al período " + args.periodo
         }else{
-          return "No se encuentras facturas a borrr para el período " + args.periodo
+          return "No se encuentran facturas correspondientes al período " + args.periodo
         }
       }
   }
