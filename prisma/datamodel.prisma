@@ -4,4 +4,13 @@ type Factura {
   updatedAt: DateTime! @updatedAt
   periodo: String!
   monto: Float!
+  cuenta: User
+}
+
+type User {
+  id: ID! @id
+  nombre: String!
+  email: String! @unique
+  password: String!
+  facturas: [Factura!]!
 }
