@@ -22,9 +22,9 @@ const resolvers = {
       let result;
       for( let i = 0, len = facturas.length; i < len; i++ ) {
         console.log("VUELTA " + i);
-        console.log(facturas[i]);
+        console.log(facturas[i]["periodo"]);
         console.log(args.periodo);
-          if( facturas[i][1] === args.periodo ) {
+          if( facturas[i]["periodo"] === args.periodo ) {
               result = facturas[i];
               break;
           }
