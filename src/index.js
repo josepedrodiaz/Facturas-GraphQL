@@ -21,6 +21,9 @@ const resolvers = {
     getFacturaByMonth: function(_, args) {
       let result;
       for( let i = 0, len = facturas.length; i < len; i++ ) {
+        console.log("VUELTA " + i);
+        console.log(facturas[i][1]);
+        console.log(args.month);
           if( facturas[i][1] === args.month ) {
               result = facturas[i];
               break;
