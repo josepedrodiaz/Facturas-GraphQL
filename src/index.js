@@ -21,7 +21,7 @@ const resolvers = {
     getFacturaByMonth: function(_, args) {
       let result;
       for( let i = 0, len = facturas.length; i < len; i++ ) {
-          if( facturas[i][2] === args.month ) {
+          if( facturas[i][1] === args.month ) {
               result = facturas[i];
               break;
           }
