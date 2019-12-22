@@ -1,7 +1,6 @@
 type Query {
   info: String!
   feed: [Factura!]!
-  getFacturaByIndex(key: Int!): Factura
   getFacturaByPeriodo(periodo: String!): Factura
 }
 
