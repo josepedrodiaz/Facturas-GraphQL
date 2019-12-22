@@ -70,7 +70,7 @@ const resolvers = {
           return "No se encuentras facturas a borrr para el período " + args.periodo
         }
       }
-
+  }
 }
 
 // 3
