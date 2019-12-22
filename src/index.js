@@ -15,7 +15,7 @@ const resolvers = {
   Query: {
     info: () => 'Esta es mi API de Facturas',
     feed: () => facturas,
-    getFacturaByIndex: (_, { Int: key}) => facturas[key],
+    getFacturaByIndex: (_, { key }) => facturas[key],
     getFacturaByPeriodo: function (_, { periodo }) {
       let result;
       for (let i = 0, len = facturas.length; i < len; i++) {
