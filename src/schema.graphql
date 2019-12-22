@@ -1,7 +1,7 @@
 type Query {
   info: String!
   feed: [Factura!]!
-  getFacturaByIndex(indexId: Int!): Factura
+  getFacturaByIndex(key: Int!): Factura
   getFacturaByPeriodo(periodo: String!): Factura
 }
 
