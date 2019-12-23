@@ -31,7 +31,13 @@ async function signup(parent, args, context, info) {
       throw new Error('Invalid password')
     }
   
-    const token = jwt.sign({ userId: user.id }, APP_SECRET)
+    //const token = jwt.sign({ userId: user.id }, APP_SECRET)
+
+    const token = ({
+      //exp: Math.floor(Date.now() / 1000) + (60 * 60),
+      exp: Math.floor(Date.now() / 1000) + 10,//10 seconds expiration
+      userId: user.id
+    }, APP_SECRET);
   
     // 3
     return {
