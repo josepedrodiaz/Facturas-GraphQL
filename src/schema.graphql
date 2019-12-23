@@ -10,6 +10,7 @@ type Mutation {
     put(id: String!, periodo: String!, monto: Float!): Factura
     signup(email: String!, password: String!, nombre: String!): AuthPayload
     login(email: String!, password: String!): AuthPayload
+    nota(facturaId: ID!, contenido: String!): Nota
   }
 
 
@@ -22,6 +23,7 @@ type Factura {
   periodo: String!
   monto: Float!
   cuenta: User
+  notas: [Nota!]!
 }
 
 type AuthPayload {
@@ -37,3 +39,9 @@ type User {
   facturas: [Factura!]!
 }
 
+type Nota {
+  id: ID!
+  factura: Factura!
+  user: User!
+  contenido: String!
+}
