@@ -1,3 +1,5 @@
+const { APP_SECRET, getUserId } = require('../utils')
+
 function info() {
     return 'Esta es mi API de Facturas'
   }
