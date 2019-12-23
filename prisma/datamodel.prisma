@@ -5,6 +5,7 @@ type Factura {
   periodo: String!
   monto: Float!
   cuenta: User
+  notas: [Nota!]!
 }
 
 type User {
@@ -13,4 +14,12 @@ type User {
   email: String! @unique
   password: String!
   facturas: [Factura!]!
+  notas: [Nota!]!
+}
+
+type Nota {
+  id: ID! @id
+  factura: Factura!
+  user: User!
+  contenido: String!
 }
